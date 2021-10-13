@@ -1,5 +1,5 @@
 /**
- * Skirta rasti ilgiausiai gimineje isgyvenusi asmeni
+ * Skirta rasti ilgiausiai gimineje isgyvenusi asmeni, naudojamas rekursijos algoritmas
  * @param {Object[]} giminesMedis Gimines medi aprasantis objektas
  * @returns {number} Ilgiausiai gyvenusio asmens amzius
  */
