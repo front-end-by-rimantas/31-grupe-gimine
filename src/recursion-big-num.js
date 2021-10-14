@@ -19,7 +19,6 @@ const numbers = [
 ];
 
 function recBiggestNumber(list) {
-    console.log(list);
     let biggest = -Infinity;
 
     if (typeof list === 'number') {
@@ -38,6 +37,23 @@ function recBiggestNumber(list) {
     return biggest;
 }
 
-const ats = recBiggestNumber(numbers);
+function recBiggestNumber2(data) {
+    let biggest = -Infinity;
+
+    if (Array.isArray(data)) {
+        for (const item of data) {
+            const rez = recBiggestNumber2(item);
+            if (rez > biggest) {
+                biggest = rez;
+            }
+        }
+    } else {
+        return data;
+    }
+
+    return biggest;
+}
+
+const ats = recBiggestNumber2(numbers);
 
 console.log(ats);
