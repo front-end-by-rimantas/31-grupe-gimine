@@ -6,9 +6,13 @@
 function kasVyriausias(giminesMedis) {
     let maxAge = 0;
 
-    for (const { age } of giminesMedis) {
+    for (const { age, children } of giminesMedis) {
         if (age > maxAge) {
             maxAge = age;
+        }
+        const oldestChild = kasVyriausias(children);
+        if (oldestChild > maxAge) {
+            maxAge = oldestChild;
         }
     }
 
